@@ -1,0 +1,39 @@
+spring:
+  mvc:
+    static-path-pattern: /**
+    #数据源配置
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/sfd_db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+    show-sql: true
+server:
+  port: 9999
+  tomcat.max-threads: 0
+  tomcat.uri-encoding: UTF-8
+  servlet:
+    context-path: /
+  tomcat:
+    basedir: /home/zhangds/tmp
+logging:
+  config: classpath:logback-boot.xml
+  level:
+    com.sfd.mapper: debug
+    root: info
+web:
+  upload-path: C:\Users\zhangds\git\hexo-test\public
+  server: 10.140.245.41:9999
+mybatis:
+  #mapper-locations: classpath:mappers/*Mapper.xml  #注意：一定要对应mapper映射xml文件的所在路径
+  type-aliases-package: com.sfd.model  # 注意：对应实体类的路径
+#pagehelper
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+  returnPageInfo: check
+
