@@ -1,6 +1,7 @@
 package com.zds.web.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.zds.dao.ArticleRepository;
 import com.zds.dao.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,9 +20,12 @@ public class IndexController {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    ArticleRepository articleRepository;
+
     @GetMapping("")
     public String index(){
 //        return JSON.toJSONString(new User());//
-        return JSON.toJSONString(userRepository.findAll());
+        return JSON.toJSONString(articleRepository.findAll());
     }
 }
