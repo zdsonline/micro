@@ -1,5 +1,6 @@
 package com.zds.web.controller;
 
+import com.zds.api.service.HelloService;
 import com.zds.dao.ArticleRepository;
 import com.zds.dao.UserRepository;
 import com.zds.entity.Article;
@@ -26,10 +27,20 @@ public class IndexController {
     @Autowired
     ArticleRepository articleRepository;
 
+    @Autowired
+    HelloService helloService;
+
     @GetMapping("")
     public APIResponse index() {
 //        return JSON.toJSONString(new User());//
+
         List<Article> articles = articleRepository.findAll();
         return APIResponse.success(articles);
+    }
+
+    @GetMapping("/greeting")
+    public APIResponse greeting(){
+        helloService.greeting("");
+        return APIResponse.success();
     }
 }

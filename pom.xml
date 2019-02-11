@@ -8,6 +8,7 @@
         <module>dao</module>
         <module>web</module>
         <module>entity</module>
+        <module>register</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
