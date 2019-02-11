@@ -1,12 +1,15 @@
 package com.zds.web.controller;
 
-import com.alibaba.fastjson.JSON;
 import com.zds.dao.ArticleRepository;
 import com.zds.dao.UserRepository;
+import com.zds.entity.Article;
+import com.zds.web.util.APIResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * @Author zhangds
@@ -24,8 +27,9 @@ public class IndexController {
     ArticleRepository articleRepository;
 
     @GetMapping("")
-    public String index(){
+    public APIResponse index() {
 //        return JSON.toJSONString(new User());//
-        return JSON.toJSONString(articleRepository.findAll());
+        List<Article> articles = articleRepository.findAll();
+        return APIResponse.success(articles);
     }
 }
