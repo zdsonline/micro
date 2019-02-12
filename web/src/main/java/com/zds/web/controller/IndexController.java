@@ -40,7 +40,7 @@ public class IndexController {
 
     @GetMapping("/greeting")
     public APIResponse greeting(){
-        helloService.greeting("");
-        return APIResponse.success();
+//        helloService.greeting("");
+        return APIResponse.success(helloService.greeting("我是奔波儿灞~~"));
     }
 }
