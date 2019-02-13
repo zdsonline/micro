@@ -6,7 +6,6 @@
         <groupId>com.zds</groupId>
         <artifactId>micro</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
     </parent>
     <groupId>com.zds</groupId>
     <artifactId>web</artifactId>
