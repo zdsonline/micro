@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class IndexController {
 
     @GetMapping("/greeting")
+//    @SentinelResource("index-greeting")
     public String greeting(@RequestParam("name") String name){
         return "hi"+name+",receive your message!";
     }
