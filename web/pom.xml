@@ -90,7 +90,7 @@
         <!--依赖模块-->
         <dependency>
             <groupId>com.zds</groupId>
-            <artifactId>api</artifactId>
+            <artifactId>provider-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
